@@ -1,0 +1,26 @@
+{
+  "name": "projeto-cypress-avancado",
+  "version": "1.0.0",
+  "description": "Projeto do curso avançado de Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorrsbarbosa/projeto-cypress-avancado.git"
+  },
+  "keywords": [
+    "cyress",
+    "cypress.io",
+    "testing",
+    "e2e"
+  ],
+  "author": "Vitor Barbosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitorrsbarbosa/projeto-cypress-avancado/issues"
+  },
+  "homepage": "https://github.com/vitorrsbarbosa/projeto-cypress-avancado#readme"
+}
+
