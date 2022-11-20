@@ -4,7 +4,10 @@
   "description": "Projeto do curso avançado de Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "lint": "npx standard",
+    "lint:fix": "npx standard --fix",
+    "test": "cypress run",
+    "cy:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -29,3 +32,4 @@
     "standardjs": "^1.0.0"
   }
 }
+
