@@ -9,6 +9,16 @@
     "test": "cypress run",
     "cy:open": "cypress open"
   },
+  "standard": {
+    "globals": [
+      "beforeEach",
+      "context",
+      "cy",
+      "Cypress",
+      "describe",
+      "it"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitorrsbarbosa/projeto-cypress-avancado.git"
