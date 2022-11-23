@@ -1,3 +1,6 @@
+/// <reference types="Cypress"/>
+
+import 'cypress-localstorage-commands'
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,3 +26,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('assertLoadingIsShownAndHidden', () => {
+  cy.contains('Loading ...').should('be.visible')
+  cy.contains('Loading ...').should('not.exist')
+})
