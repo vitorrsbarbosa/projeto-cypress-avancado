@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "npx standard",
     "lint:fix": "npx standard --fix",
-    "test": "cypress run",
-    "cy:open": "cypress open"
+    "test": "cypress run --record",
+    "cy:open": "cypress open --e2e --browser electron"
   },
   "standard": {
     "globals": [
