@@ -36,10 +36,9 @@
   },
   "homepage": "https://github.com/vitorrsbarbosa/projeto-cypress-avancado#readme",
   "devDependencies": {
-    "cypress": "^11.1.0",
+    "cypress": "^12.17.3",
     "cypress-localstorage-commands": "^1.7.0",
     "faker": "^5.5.3",
     "standardjs": "^1.0.0"
   }
 }
-
