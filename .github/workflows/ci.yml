@@ -19,15 +19,23 @@ jobs:
         run: npm run lint
   cypress-tests:
     needs: eslint
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+    runs-on: ubuntu-22.04
+    container:
+      image: cypress/browsers:latest
+      options: --user 1001
     steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+      - run: node -v
+
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run end-to-end tests on desktop viewport 🧪
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+          command: npm test
+          auto-cancel-after-failures: 3
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-        with:
-          command: npm test
