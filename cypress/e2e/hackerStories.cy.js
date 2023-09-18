@@ -281,4 +281,18 @@ describe('Hacker Stories', () => {
         .should('be.visible')
     })
   })
+  context('Loading case', () => {
+    it('assert delay on page shows "Loading..." message before the results', () => {
+      cy.intercept('GET', '**/search**', { delay: 1000, fixture: 'stories' })
+        .as('getDelayedStories')
+
+      cy.visit('/')
+
+      cy.assertLoadingIsShownAndHidden()
+        .wait('@getDelayedStories')
+
+      cy.get('.item')
+        .should('have.length', 2)
+    })
+  })
 })
