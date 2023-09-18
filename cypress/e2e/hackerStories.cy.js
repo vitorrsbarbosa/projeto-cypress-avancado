@@ -171,10 +171,15 @@ describe('Hacker Stories', () => {
               { fixture: 'empty' }).as('getRandomStories')
 
             Cypress._.times(6, () => {
+              const randomWord = faker.random.word()
+
               cy.get('#search').clear()
                 .should('be.visible')
-                .type(`${faker.random.word()}{enter}`)
-              cy.wait('@getRandomStories')
+                .type(`${randomWord}{enter}`)
+                .wait('@getRandomStories')
+
+              cy.getLocalStorage('search')
+                .should('be.equal', randomWord)
             })
 
             // cy.get('.last-searches button')
@@ -204,9 +209,15 @@ describe('Hacker Stories', () => {
             .type(`${newTerm}{enter}`)
             .wait('@getFixtureStories')
 
+          cy.getLocalStorage('search')
+            .should('be.equal', newTerm)
+
           cy.get('.item').should('have.length', 2)
           cy.get(`button:contains(${initialTerm})`)
             .should('be.visible')
+
+          cy.getLocalStorage('search')
+            .should('be.equal', newTerm)
         })
         it('types and clicks the submit button', () => {
           cy.get('#search')
@@ -217,6 +228,9 @@ describe('Hacker Stories', () => {
             .click()
 
             .wait('@getFixtureStories')
+
+          cy.getLocalStorage('search')
+            .should('be.equal', newTerm)
 
           cy.get('.item').should('have.length', 2)
           cy.get(`button:contains(${initialTerm})`)
