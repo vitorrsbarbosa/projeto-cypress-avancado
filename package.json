@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "npx standard",
     "lint:fix": "npx standard --fix",
-    "test": "cypress run",
+    "test": "cypress run --reporter nyan",
     "cy:open": "cypress open --e2e --browser electron"
   },
   "standard": {
@@ -37,7 +37,7 @@
   "homepage": "https://github.com/vitorrsbarbosa/projeto-cypress-avancado#readme",
   "devDependencies": {
     "cypress": "^13.2.0",
-    "cypress-localstorage-commands": "^1.7.0",
+    "cypress-localstorage-commands": "^2.2.4",
     "faker": "^5.5.3",
     "standardjs": "^1.0.0"
   }
